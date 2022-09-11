@@ -11,8 +11,8 @@ public class Calculator {
   String path;
   String minuend;
   String subtrahend;
-  int minuendIndex = -1; // In case the index can not be found
-  int subtrahendIndex = -1;
+  int minuendIndex = -1; // Set to -1, in case the index can not be found
+  int subtrahendIndex = -1; // Set to -1, in case the index can not be found
   ArrayList<String> minuendData = new ArrayList<>();
   ArrayList<String> subtrahendData = new ArrayList<>();
   ArrayList<String> result = new ArrayList<>();
@@ -23,7 +23,7 @@ public class Calculator {
     this.path = path;
     this.minuend = minuend;
     this.subtrahend = subtrahend;
-    result.add("Difference"); // Adding this string to have the same row number + added values again
+    result.add("Difference"); // Adding this string to have a name for the values + the same row number
 
     CSVReader csvReader = new CSVReader(path);
     name = csvReader.getName();

@@ -21,16 +21,16 @@ public final class App {
     final String pathWeather = "src/main/resources/de/exxcellent/challenge/weather.csv";
     final String pathFootball = "src/main/resources/de/exxcellent/challenge/football.csv";
 
-    Calculator csvReaderWeather = new Calculator(pathWeather, "MxT", "MnT");
+    Calculator calculatorWeather = new Calculator(pathWeather, "MxT", "MnT");
 
-    Calculator csvReaderFootball = new Calculator(pathFootball, "Goals", "Goals Allowed");
+    Calculator calculatorFootball = new Calculator(pathFootball, "Goals", "Goals Allowed");
 
     String dayWithSmallestTempSpread =
-        csvReaderWeather.giveResult("difference"); // Your day analysis function call …
+        calculatorWeather.giveResult("difference"); // Your day analysis function call …
     System.out.printf("Day with smallest temperature spread : %s%n", dayWithSmallestTempSpread);
 
     String teamWithSmallestGoalSpread =
-        csvReaderFootball.giveResult("absolute difference"); // Your goal analysis function call …
+        calculatorFootball.giveResult("absolute difference"); // Your goal analysis function call …
     System.out.printf("Team with smallest goal spread       : %s%n", teamWithSmallestGoalSpread);
   }
 }

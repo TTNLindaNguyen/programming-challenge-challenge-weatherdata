@@ -33,6 +33,9 @@
 ### Added
 - Checks for correct spelling of minuend and subtrahend spellings. (Typos were throwing exceptions)
 
+## [0.0.5] 11 Sept 2022
+### Changed
+Renamed wrong descriptions in App.java
 
 
 
