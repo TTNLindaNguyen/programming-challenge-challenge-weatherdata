@@ -1,0 +1,11 @@
+# Changelog
+## 11 Sept 2022
+### Added
+- Football csv data.
+- Calculation for absolute difference.
+- Missing Javadoc.
+
+### Changed
+- giveResult() can now give result for weather and football, depending on the request.
+
+
