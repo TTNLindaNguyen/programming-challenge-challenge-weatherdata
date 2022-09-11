@@ -1,5 +1,5 @@
 # Changelog
-## 11 Sept 2022
+## [0.0.1] 11 Sept 2022
 ### Added
 - Football csv data.
 - Calculation for absolute difference.
@@ -7,5 +7,21 @@
 
 ### Changed
 - giveResult() can now give result for weather and football, depending on the request.
+
+## [0.0.2] 11 Sept 2022
+### Added
+- Javadoc
+- Minuend and Subtrahend function for searching the index
+
+### Changed
+- Minuend and Subtrahend are now replaced by Strings, no need for hardcoded index.
+- CSV paths are now in App.java
+- giveResult() parameter changed from 'weather' and 'football' to 'difference' and 'absolute difference'.
+
+### Removed
+- WeatherDatabase.java
+- FootballDatabase.java
+
+
 
 

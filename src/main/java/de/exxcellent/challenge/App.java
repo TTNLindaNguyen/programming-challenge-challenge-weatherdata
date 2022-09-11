@@ -18,28 +18,19 @@ public final class App {
   public static void main(String... args) throws IOException {
 
     // Your preparation code …
+    final String pathWeather = "src/main/resources/de/exxcellent/challenge/weather.csv";
+    final String pathFootball = "src/main/resources/de/exxcellent/challenge/football.csv";
 
-    WeatherDatabase weatherDatabase = new WeatherDatabase();
-    FootballDatabase footballDatabase = new FootballDatabase();
+    CSVReader csvReaderWeather = new CSVReader(pathWeather, "MxT", "MnT");
 
-    CSVReader csvReaderWeather =
-        new CSVReader(
-            weatherDatabase.getPathWeather(),
-            weatherDatabase.getMaxTemp(),
-            weatherDatabase.getMinTemp());
-
-    CSVReader csvReaderFootball =
-        new CSVReader(
-            footballDatabase.getPathFootball(),
-            footballDatabase.getGoals(),
-            footballDatabase.getGoalsAllowed());
+    CSVReader csvReaderFootball = new CSVReader(pathFootball, "Goals", "Goals Allowed");
 
     String dayWithSmallestTempSpread =
-        csvReaderWeather.giveResult("weather"); // Your day analysis function call …
+        csvReaderWeather.giveResult("difference"); // Your day analysis function call …
     System.out.printf("Day with smallest temperature spread : %s%n", dayWithSmallestTempSpread);
 
     String teamWithSmallestGoalSpread =
-        csvReaderFootball.giveResult("football"); // Your goal analysis function call …
+        csvReaderFootball.giveResult("absolute difference"); // Your goal analysis function call …
     System.out.printf("Team with smallest goal spread       : %s%n", teamWithSmallestGoalSpread);
   }
 }
