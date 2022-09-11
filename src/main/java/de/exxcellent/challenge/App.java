@@ -21,9 +21,9 @@ public final class App {
     final String pathWeather = "src/main/resources/de/exxcellent/challenge/weather.csv";
     final String pathFootball = "src/main/resources/de/exxcellent/challenge/football.csv";
 
-    CSVReader csvReaderWeather = new CSVReader(pathWeather, "MxT", "MnT");
+    Calculator csvReaderWeather = new Calculator(pathWeather, "MxT", "MnT");
 
-    CSVReader csvReaderFootball = new CSVReader(pathFootball, "Goals", "Goals Allowed");
+    Calculator csvReaderFootball = new Calculator(pathFootball, "Goals", "Goals Allowed");
 
     String dayWithSmallestTempSpread =
         csvReaderWeather.giveResult("difference"); // Your day analysis function call …

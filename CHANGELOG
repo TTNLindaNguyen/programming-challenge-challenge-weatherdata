@@ -22,6 +22,15 @@
 - WeatherDatabase.java
 - FootballDatabase.java
 
+## [0.0.3] 11 Sept 2022
+### Added
+- new Calculator class for dividing CSVReader functionality
+
+### Changed
+- CSVReader.java
+
+
+
 
 
 
