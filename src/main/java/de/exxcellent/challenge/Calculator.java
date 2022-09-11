@@ -11,8 +11,8 @@ public class Calculator {
   String path;
   String minuend;
   String subtrahend;
-  int minuendIndex;
-  int subtrahendIndex;
+  int minuendIndex = -1; // In case the index can not be found
+  int subtrahendIndex = -1;
   ArrayList<String> minuendData = new ArrayList<>();
   ArrayList<String> subtrahendData = new ArrayList<>();
   ArrayList<String> result = new ArrayList<>();
@@ -31,7 +31,12 @@ public class Calculator {
 
     searchMinuend();
     searchSubtrahend();
-    makeColumns();
+
+    if (minuendIndex >= 0 && subtrahendIndex >= 0) {
+      makeColumns();
+    } else {
+      System.out.println("Please check typos.");
+    }
   }
 
   /** Searches the index number of the minuend column. */
@@ -43,7 +48,7 @@ public class Calculator {
         }
       }
     } else {
-      System.out.println("Wrong minuend name");
+      System.out.println("Error: Wrong minuend name");
     }
   }
 
@@ -56,7 +61,7 @@ public class Calculator {
         }
       }
     } else {
-      System.out.println("Wrong subtrahend name");
+      System.out.println("Error: Wrong subtrahend name");
     }
   }
 
@@ -85,7 +90,11 @@ public class Calculator {
    * @return the name with the lowest value.
    */
   private String minDif() {
-    return name.get(result.indexOf(Collections.min(result)) + 1);
+    if (minuendIndex >= 0 && subtrahendIndex >= 0) {
+      return name.get(result.indexOf(Collections.min(result)) + 1);
+    } else {
+      return "Error: Please check typos.";
+    }
   }
 
   /**
@@ -104,7 +113,11 @@ public class Calculator {
         intList.add(Integer.parseInt(result.get(i)));
       }
     }
-    return name.get(intList.indexOf(Collections.min(intList)) + 1);
+    if (minuendIndex >= 0 && subtrahendIndex >= 0) {
+      return name.get(intList.indexOf(Collections.min(intList)) + 1);
+    } else {
+      return "Error: Please check typos.";
+    }
   }
 
   /**

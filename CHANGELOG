@@ -29,6 +29,10 @@
 ### Changed
 - CSVReader.java
 
+## [0.0.4] 11 Sept 2022
+### Added
+- Checks for correct spelling of minuend and subtrahend spellings. (Typos were throwing exceptions)
+
 
 
 
